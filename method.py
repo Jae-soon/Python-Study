@@ -42,10 +42,19 @@ class FlyableAttackUnit(AttackUnit, Flyable):
         print("[공중 유닛 이동]")
         self.fly(self.name, location)
 
-valture = AttackUnit("벌쳐", 80, 10, 20)
-battleCruiser = FlyableAttackUnit("배틀크루저", 500, 25, 3)
-valture.move("11시")
-battleCruiser.move("8시")
+# 건물
+class BuildingUnit(Unit):
+    def __init__(self, name, hp, location):
+        # Unit.__init__(self, name, hp, 0)
+        super().__init__(name, hp, 0)
+        self.location = location
+        # pass # 아무것도 안하고 일단 넘어감
+
+
+# valture = AttackUnit("벌쳐", 80, 10, 20)
+# battleCruiser = FlyableAttackUnit("배틀크루저", 500, 25, 3)
+# valture.move("11시")
+# battleCruiser.move("8시")
 # valkyrie = FlyableAttackUnit("발키리", 200, 6, 5)
 # valkyrie.fly(valkyrie.name, "3시")
 # firebat1 = AttackUnit("파이어뱃", 50, 16)
